@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Clara — Fotografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .hero-photo-slot img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .mosaic-item img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .mosaic-item:hover img { transform: scale(1.04); }
+    .about-photo img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">Maria <span>Clara</span></div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a class="nav-logo" href="index.html">Maria <span>Clara</span></a>
+    <ul class="nav-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <p class="hero-eyebrow anim-fade-up" style="--delay:0.1s">Fotografia de Autor</p>
+      <h1 class="hero-title anim-fade-up" style="--delay:0.25s">
+        Imagens que<br>
+        <em>guardam</em><br>
+        memórias reais.
+      </h1>
+      <p class="hero-subtitle anim-fade-up" style="--delay:0.4s">
+        Cada momento merece ser registrado com cuidado, luz e intenção.
+        Maria Clara captura histórias que durarão para sempre.
+      </p>
+      <div class="hero-actions anim-fade-up" style="--delay:0.55s">
+        <a class="hero-cta" href="portfolio.html">
+          Ver portfólio <span class="hero-cta-arrow">→</span>
+        </a>
+        <a class="hero-secondary" href="https://wa.me/558198982159/">Agendar sessão</a>
+      </div>
+    </div>
+
+    <div class="hero-right anim-fade-up" style="--delay:0.2s">
+      <div class="hero-photo-grid">
+        <div class="hero-photo-slot parallax-card" data-speed="0.04">
+          <img src="../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3905.JPG" alt="Foto principal">
+          <div class="photo-shimmer"></div>
+        </div>
+        <div class="hero-photo-slot parallax-card" data-speed="0.07">
+          <img src="../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3924.JPG" alt="Foto 02">
+          <div class="photo-shimmer"></div>
+        </div>
+        <div class="hero-photo-slot parallax-card" data-speed="0.05">
+          <img src="../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3897.JPG" alt="Foto 03">
+          <div class="photo-shimmer"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint anim-fade-up" style="--delay:1s">
+      <div class="scroll-hint-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- INTRO STRIP -->
+  <div class="intro-strip reveal-strip">
+    <p class="intro-strip-text">
+      "Fotografar é colocar na mesma linha de mira a cabeça, o olho e o coração."
+    </p>
+    <div style="display:flex;gap:60px;">
+      <div class="intro-strip-stat counter-stat">
+        <span class="intro-strip-stat-number" data-target="2">—</span>
+        <span class="intro-strip-stat-label">Anos de experiência</span>
+      </div>
+      <div class="intro-strip-stat counter-stat">
+        <span class="intro-strip-stat-number" data-target="50">—</span>
+        <span class="intro-strip-stat-label">Sessões realizadas</span>
+      </div>
+      <div class="intro-strip-stat counter-stat">
+        <span class="intro-strip-stat-number" data-target="4800">—</span>
+        <span class="intro-strip-stat-label">Momentos eternizados</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="servicos">
+    <p class="section-eyebrow reveal">O que eu faço</p>
+    <h2 class="section-title reveal">Cada tipo de história<br>tem a sua linguagem.</h2>
+    <div class="services-grid">
+      <div class="service-card reveal-card" style="--card-delay:0s">
+        <div class="service-number">I</div>
+        <h3 class="service-name">Casamentos</h3>
+        <p class="service-desc">
+          Do buquê ao abraço final, cada instante do seu dia especial registrado com
+          delicadeza e emoção genuína. Documentário e pose, tudo em harmonia.
+        </p>
+      </div>
+      <div class="service-card reveal-card" style="--card-delay:0.12s">
+        <div class="service-number">II</div>
+        <h3 class="service-name">Ensaios</h3>
+        <p class="service-desc">
+          Gestante, família, pré-wedding ou retratos autorais. Sessões pensadas para
+          revelar quem você é de verdade, no ambiente que faz sentido para você.
+        </p>
+      </div>
+      <div class="service-card reveal-card" style="--card-delay:0.24s">
+        <div class="service-number">III</div>
+        <h3 class="service-name">Eventos</h3>
+        <p class="service-desc">
+          Aniversários, batizados, formaturas e comemorações. Capturo a energia do
+          ambiente e os sorrisos que fazem cada evento único e inesquecível.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOSAICO -->
+  <section class="portfolio-teaser">
+    <div class="portfolio-header">
+      <div class="portfolio-header-left">
+        <p class="section-eyebrow reveal">Trabalhos recentes</p>
+        <h2 class="section-title reveal">Um pequeno recorte<br>do que criamos.</h2>
+      </div>
+      <a class="portfolio-link reveal" href="portfolio.html">Ver portfólio completo →</a>
+    </div>
+    <div class="portfolio-mosaic">
+      <div class="mosaic-item reveal-mosaic" style="--mosaic-delay:0s">
+        <img src="../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_2.jpg" alt="Casamento">
+        <div class="mosaic-overlay"><span class="mosaic-overlay-text">Casamento</span></div>
+      </div>
+      <div class="mosaic-item reveal-mosaic" style="--mosaic-delay:0.08s">
+        <img src="../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento.JPG" alt="Família Casamento">
+        <div class="mosaic-overlay"><span class="mosaic-overlay-text">Família Casamento</span></div>
+      </div>
+      <div class="mosaic-item reveal-mosaic" style="--mosaic-delay:0.16s">
+        <img src="../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3897.JPG" alt="Casamento">
+        <div class="mosaic-overlay"><span class="mosaic-overlay-text">Casamento</span></div>
+      </div>
+      <div class="mosaic-item reveal-mosaic" style="--mosaic-delay:0.24s">
+        <img src="../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_4.JPG" alt="Evento">
+        <div class="mosaic-overlay"><span class="mosaic-overlay-text">Evento</span></div>
+      </div>
+      <div class="mosaic-item reveal-mosaic" style="--mosaic-delay:0.32s">
+        <img src="../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_5.JPG" alt="Retrato">
+        <div class="mosaic-overlay"><span class="mosaic-overlay-text">Retrato</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="about-photo reveal-left">
+      <img src="../imagens/pagina-inicial/foto-maria-clara.JPG" alt="Maria Clara">
+      <div class="about-photo-frame"></div>
+    </div>
+    <div class="about-content reveal-right">
+      <p class="section-eyebrow">Quem sou eu</p>
+      <h2 class="section-title">Mais do que fotos,<br>eu preservo afeto.</h2>
+      <p class="about-text">
+        Sou Maria Clara, fotógrafa apaixonada por capturar a beleza dos momentos verdadeiros.
+        Acredito que as melhores imagens surgem quando as pessoas estão à vontade,
+        livres para ser quem são.
+      </p>
+      <p class="about-text">
+        Trabalho com luz natural sempre que possível, porque ela tem uma magia que
+        nenhum flash consegue replicar. Cada sessão é planejada com cuidado para
+        refletir a personalidade de quem está na frente da câmera.
+      </p>
+      <p class="about-signature">Maria Clara</p>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contact" id="contato">
+    <div class="contact-inner">
+      <p class="section-eyebrow reveal">Vamos conversar</p>
+      <h2 class="section-title reveal">Pronta para<br>contar a sua história?</h2>
+      <p class="contact-subtitle reveal">Entre em contato e vamos criar algo lindo juntos.</p>
+      <div class="contact-actions reveal">
+        <a class="btn-primary" href="https://wa.me/558198982159/">Enviar mensagem →</a>
+        <a class="btn-outline" href="https://www.instagram.com/mariaclara.crtv/" target="_blank">Instagram</a>
+      </div>
+    </div>
+    <div class="contact-deco"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Maria <span>Clara</span></div>
+    <p class="footer-copy">© 2026 Maria Clara Fotografia. Todos os direitos reservados.</p>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/mariaclara.crtv/" target="_blank">Instagram</a>
+      <a href="https://wa.me/558198982159/">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

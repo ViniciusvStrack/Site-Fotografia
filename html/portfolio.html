@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio — Maria Clara Fotografia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <style>
+    .album-cover img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .gallery-slot img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .gallery-slot img ~ .gallery-slot-overlay { z-index: 1; }
+    .album-cover img ~ .album-overlay          { z-index: 1; }
+
+    /* Galeria de fotos dentro do álbum: aspect-ratio uniforme no mobile */
+    @media (max-width: 600px) {
+      .gallery-slot,
+      .gallery-slot:nth-child(4n+1),
+      .gallery-slot:nth-child(7n+3) {
+        aspect-ratio: 4/3 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav" class="scrolled">
+    <a class="nav-logo" href="index.html">Maria <span>Clara</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#servicos">Serviços</a></li>
+      <li><a href="portfolio.html" class="active">Portfólio</a></li>
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+    <button class="nav-menu-btn" id="navMenuBtn" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#servicos">Serviços</a></li>
+      <li><a href="portfolio.html">Portfólio</a></li>
+      <li><a href="index.html#sobre">Sobre</a></li>
+      <li><a href="index.html#contato">Contato</a></li>
+    </ul>
+  </div>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div>
+        <p class="page-eyebrow">Meu trabalho</p>
+        <h1 class="page-title">Cada álbum,<br>uma <em>história</em> única.</h1>
+      </div>
+      <p class="page-desc">
+        Aqui você encontra todos os ensaios e eventos fotografados.
+        Cada álbum é um capítulo da vida de alguém, registrado com cuidado e afeto.
+      </p>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">Todos</button>
+    <button class="filter-btn" data-filter="casamento">Casamentos</button>
+    <button class="filter-btn" data-filter="ensaio">Ensaios</button>
+    <button class="filter-btn" data-filter="familia">Família</button>
+    <button class="filter-btn" data-filter="gestante">Gestante</button>
+    <button class="filter-btn" data-filter="evento">Eventos</button>
+    <button class="filter-btn" data-filter="aniversario">Aniversários</button>
+  </div>
+
+  <!-- GRADE DE ÁLBUNS -->
+  <main class="albums-section" id="albumsSection">
+    <div class="albums-grid" id="albumsGrid">
+
+      <a class="album-card reveal" data-category="casamento"
+         href="#" onclick="openAlbum('casamento-brennand', event)">
+        <div class="album-cover">
+          <img src="../imagens/imagens-portfolio/casamento-brennand/IMG_4141.JPG" alt="Casamento Brennand">
+          <div class="album-overlay"><div class="album-overlay-cta">Ver álbum</div></div>
+        </div>
+        <div class="album-meta">
+          <div>
+            <h2 class="album-name">Casamento Brennand</h2>
+            <p class="album-name-sub">Casamento · Março 2025</p>
+          </div>
+          <span class="album-count">10 fotos</span>
+        </div>
+      </a>
+
+      <a class="album-card reveal" data-category="casamento"
+         href="#" onclick="openAlbum('casamento-emily', event)">
+        <div class="album-cover">
+          <img src="../imagens/imagens-portfolio/casamento-emily/IMG_2045.JPG" alt="Casamento Emily">
+          <div class="album-overlay"><div class="album-overlay-cta">Ver álbum</div></div>
+        </div>
+        <div class="album-meta">
+          <div>
+            <h2 class="album-name">Casamento Emily</h2>
+            <p class="album-name-sub">Casamento · Março 2025</p>
+          </div>
+          <span class="album-count">8 fotos</span>
+        </div>
+      </a>
+
+      <a class="album-card reveal" data-category="casamento"
+         href="#" onclick="openAlbum('casamento-gustavo-analice', event)">
+        <div class="album-cover">
+          <img src="../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3981.JPG" alt="Casamento Gustavo e Analice">
+          <div class="album-overlay"><div class="album-overlay-cta">Ver álbum</div></div>
+        </div>
+        <div class="album-meta">
+          <div>
+            <h2 class="album-name">Casamento Gustavo e Analice</h2>
+            <p class="album-name-sub">Casamento · Março 2025</p>
+          </div>
+          <span class="album-count">10 fotos</span>
+        </div>
+      </a>
+
+      <a class="album-card reveal" data-category="casamento"
+         href="#" onclick="openAlbum('casamento-livia-joao', event)">
+        <div class="album-cover">
+          <img src="" alt="Casamento Joao e Livia">
+          <div class="album-overlay"><div class="album-overlay-cta">Ver álbum</div></div>
+        </div>
+        <div class="album-meta">
+          <div>
+            <h2 class="album-name">Casamento João e Livia</h2>
+            <p class="album-name-sub">Casamento · Março 2025</p>
+          </div>
+          <span class="album-count">15 fotos</span>
+        </div>
+      </a>
+
+      <a class="album-card reveal" data-category="ensaio casamento"
+         href="#" onclick="openAlbum('preweeding-lucas-bia', event)">
+        <div class="album-cover">
+          <img src="" alt="Pré-Wedding Lucas e Bia">
+          <div class="album-overlay"><div class="album-overlay-cta">Ver álbum</div></div>
+        </div>
+        <div class="album-meta">
+          <div>
+            <h2 class="album-name">Lucas &amp; Bia</h2>
+            <p class="album-name-sub">Pré-Wedding · Novembro 2024</p>
+          </div>
+          <span class="album-count">9 fotos</span>
+        </div>
+      </a>
+
+      <!-- Card: Novo álbum -->
+      <div class="album-card" id="addAlbumCard">
+        <div class="album-cover"
+             style="background:transparent;border:1.5px dashed rgba(201,168,130,0.35);">
+          <button class="add-photo-btn" onclick="alert('Adicionar novo álbum!')">
+            <div class="add-photo-icon">+</div>
+            <span class="add-photo-label">Novo álbum</span>
+          </button>
+        </div>
+        <div class="album-meta">
+          <div>
+            <h2 class="album-name" style="color:var(--mid);">Adicionar álbum</h2>
+            <p class="album-name-sub">Clique para criar</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- DETALHE DO ÁLBUM -->
+  <div class="album-detail" id="albumDetail">
+    <button class="detail-back" onclick="closeAlbum()">← Voltar ao portfólio</button>
+    <div class="detail-header">
+      <div>
+        <p class="detail-category" id="detailCategory"></p>
+        <h2 class="detail-title"   id="detailTitle"></h2>
+      </div>
+      <p class="detail-date" id="detailDate"></p>
+    </div>
+    <div class="detail-gallery" id="detailGallery"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Maria <span>Clara</span></div>
+    <p class="footer-copy">© 2026 Maria Clara Fotografia. Todos os direitos reservados.</p>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/mariaclara.crtv/" target="_blank">Instagram</a>
+      <a href="https://wa.me/558198982159/">WhatsApp</a>
+    </div>
+  </footer>
+
+  <script>
+  // ── DADOS DOS ÁLBUNS ─────────────────────────────────────────────────
+  const albums = {
+
+    'casamento-brennand': {
+      title: 'Casamento Brennand', category: 'Casamento', date: 'Março de 2025',
+      fotos: [
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4137.JPG", alt: "foto 01" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4139.JPG", alt: "foto 02" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4209.JPG", alt: "foto 03" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4141.JPG", alt: "foto 04" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4146.JPG", alt: "foto 05" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4148.JPG", alt: "foto 06" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4158.JPG", alt: "foto 07" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4213.JPG", alt: "foto 08" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4282.JPG", alt: "foto 09" },
+        { src: "../imagens/imagens-portfolio/casamento-brennand/IMG_4292.JPG", alt: "foto 10" },
+      ]
+    },
+
+    'casamento-emily': {
+      title: 'Casamento Emily', category: 'Casamento', date: 'Março de 2025',
+      fotos: [
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_2045.JPG", alt: "foto 01" },
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_2015.JPG", alt: "foto 02" },
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_1854.JPG", alt: "foto 03" },
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_1998.JPG", alt: "foto 04" },
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_1876.JPG", alt: "foto 05" },
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_1926.JPG", alt: "foto 06" },
+        { src: "../imagens/imagens-portfolio/casamento-emily/IMG_1937.JPG", alt: "foto 07" },
+      ]
+    },
+
+    'casamento-gustavo-analice': {
+      title: 'Casamento Gustavo e Analice', category: 'Casamento', date: 'Março de 2025',
+      fotos: [
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_4001.JPG", alt: "foto 01" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3996.JPG", alt: "foto 02" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3993.JPG", alt: "foto 03" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3979.JPG", alt: "foto 04" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3917.JPG", alt: "foto 05" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3919.JPG", alt: "foto 06" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3977.JPG", alt: "foto 07" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3988.JPG", alt: "foto 08" },
+        { src: "../imagens/imagens-portfolio/casamento-gustavo-analice/IMG_3981.JPG", alt: "foto 09" },
+      ]
+    },
+
+    'casamento-livia-joao': {
+      title: 'Casamento João e Livia', category: 'Casamento', date: 'Março de 2025',
+      fotos: [
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3682.JPG", alt: "foto 01" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3686.JPG", alt: "foto 02" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3570.JPG", alt: "foto 03" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3691.JPG", alt: "foto 04" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3717.JPG", alt: "foto 05" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3674.JPG", alt: "foto 06" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3652.JPG", alt: "foto 07" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento.JPG", alt: "foto 08" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3666.JPG", alt: "foto 09" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_3.jpg", alt: "foto 10" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/IMG_3564.JPG", alt: "foto 11" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_5.JPG", alt: "foto 12" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_2.jpg", alt: "foto 13" },
+        { src: "../imagens/imagens-portfolio/casamento-livia-joao/foto_deitada_casamento_4.JPG", alt: "foto 14" },
+      ]
+    },
+
+    'preweeding-lucas-bia': {
+      title: 'Pré-Wedding Lucas & Bia', category: 'Ensaio', date: 'Novembro de 2024',
+      fotos: [
+        { src: "", alt: "foto 01" },
+        { src: "", alt: "foto 02" },
+        { src: "", alt: "foto 03" },
+        { src: "", alt: "foto 04" },
+        { src: "", alt: "foto 05" },
+        { src: "", alt: "foto 06" },
+        { src: "", alt: "foto 07" },
+        { src: "", alt: "foto 08" },
+        { src: "", alt: "foto 09" },
+      ]
+    },
+
+  };
+
+  // ── Abre álbum ──────────────────────────────────────────────────────
+  function openAlbum(id, e) {
+    if (e) e.preventDefault();
+    const data = albums[id];
+    if (!data) return;
+
+    document.getElementById('detailCategory').textContent = data.category;
+    document.getElementById('detailTitle').textContent    = data.title;
+    document.getElementById('detailDate').textContent     = data.date;
+
+    const gallery = document.getElementById('detailGallery');
+    gallery.innerHTML = '';
+
+    data.fotos.forEach((foto, i) => {
+      const slot = document.createElement('div');
+      slot.className = 'gallery-slot';
+      if (foto.src) {
+        slot.innerHTML = `<img src="${foto.src}" alt="${foto.alt}"><div class="gallery-slot-overlay"></div>`;
+      } else {
+        slot.innerHTML = `
+          <div class="gallery-slot-inner">
+            <div class="gallery-ph-icon">✦</div>
+            <span class="gallery-ph-label">Foto ${String(i+1).padStart(2,'0')}</span>
+          </div>
+          <div class="gallery-slot-overlay"></div>`;
+      }
+      gallery.appendChild(slot);
+    });
+
+    document.getElementById('albumsSection').style.display = 'none';
+    document.querySelector('.filter-bar').style.display    = 'none';
+    document.getElementById('albumDetail').classList.add('open');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // ── Fecha álbum ─────────────────────────────────────────────────────
+  function closeAlbum() {
+    document.getElementById('albumDetail').classList.remove('open');
+    document.getElementById('albumsSection').style.display = '';
+    document.querySelector('.filter-bar').style.display    = '';
+  }
+
+  // ── Filtros ──────────────────────────────────────────────────────────
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.album-card[data-category]').forEach(card => {
+        card.style.display =
+          (filter === 'all' || card.dataset.category.includes(filter)) ? '' : 'none';
+      });
+    });
+  });
+
+  // ── Reveal on scroll ────────────────────────────────────────────────
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // ── Mobile menu ─────────────────────────────────────────────────────
+  const menuBtn    = document.getElementById('navMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+    mobileMenu.querySelectorAll('a').forEach(a =>
+      a.addEventListener('click', () => {
+        menuBtn.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      })
+    );
+  }
+  </script>
+
+</body>
+</html>
